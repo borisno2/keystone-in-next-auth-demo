@@ -38,6 +38,7 @@ export const lists: Lists = {
 					read: permissions.authenticatedUser,
 				},
 			}),
+			role: text(),
 			createdAt: timestamp({
 				defaultValue: { kind: 'now' },
 			}),

@@ -21,14 +21,23 @@ export const authOptions = {
 			return true
 		},
 		async session({ session, token }: any) {
+			const { id, name, email, role } = token
+			return { ...session, data: { id, name, email, role } }
+		},
+		async jwt({ token, user }: any) {
 			const userInDb = await keystoneContext.sudo().query.User.findOne({
 				where: { subjectId: token.sub },
-				query: 'id name email',
+				query: 'id name email role',
 			})
-
-			if (!userInDb) return session
-			return { ...session, data: userInDb }
-		},
+			if (user) {
+				token = { ...token, ...user }
+			}
+			if (userInDb) {
+				token = { ...token, ...userInDb }
+			}
+			
+			return token
+		}
 	},
 	providers: [
 		Auth0({

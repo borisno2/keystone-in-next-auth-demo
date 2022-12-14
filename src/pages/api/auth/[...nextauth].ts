@@ -4,17 +4,17 @@ import { keystoneContext } from '../../../keystone/context'
 
 export const authOptions = {
 	callbacks: {
-		async signin({ account }: any) {
-			const user = await keystoneContext.sudo().db.User.findOne({
-				where: { subjectId: account.id },
+		async signIn({ user }: any) {
+			const keyUser = await keystoneContext.sudo().db.User.findOne({
+				where: { subjectId: user.id },
 			})
-			if (!user) {
+			if (!keyUser) {
 				console.log('user not found, creating one')
 				await keystoneContext.sudo().db.User.createOne({
 					data: {
-						subjectId: account.id,
-						email: account.email,
-						name: account.name,
+						subjectId: user.id,
+						email: user.email,
+						name: user.name,
 					},
 				})
 			}

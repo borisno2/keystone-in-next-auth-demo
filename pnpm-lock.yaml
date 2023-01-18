@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@keystone-6/core': https://pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-6/core
+  '@keystone-6/core': ^4.0.1
   '@keystone-6/fields-document': ^6.0.0
   '@preconstruct/next': ^4.0.0
   '@prisma/client': 4.3.1
@@ -22,7 +22,7 @@ specifiers:
   typescript: ^4.8.0
 
 dependencies:
-  '@keystone-6/core': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-6/core_b4eyluiibtzggrslc7q5mbsxbu'
+  '@keystone-6/core': 4.0.1_b4eyluiibtzggrslc7q5mbsxbu
   '@keystone-6/fields-document': 6.0.0_327xqlbaw6lnc7zz23qix6cuzm
   '@preconstruct/next': 4.0.0
   '@prisma/client': 4.3.1
@@ -2189,6 +2189,117 @@ packages:
     resolution: {integrity: sha512-QIDIZ9a0NfDStgD47VaTgwiPjlw1p4QPLwjOB/9+/DqIztoQopPNNAd+HdtQMHgE+ibP3dJacd8/TVL/A1RaaA==}
     dev: false
 
+  /@keystone-6/core/4.0.1_b4eyluiibtzggrslc7q5mbsxbu:
+    resolution: {integrity: sha512-eTbcmOZFhgSPlQ4jpZTQxuWud4/TZglSGj5HWjQlSHruIZDBsrkv7SxUgNZqrXdxIj6r33eAVtAb5H4vVhx0gQ==}
+    hasBin: true
+    dependencies:
+      '@apollo/client': 3.7.2_gdcq4dv6opitr3wbfwyjmanyra
+      '@aws-sdk/client-s3': 3.226.0
+      '@aws-sdk/lib-storage': 3.226.0_3sonlkuebi6gzxusmqd6vu6lyi
+      '@aws-sdk/s3-request-presigner': 3.226.0
+      '@babel/runtime': 7.20.6
+      '@emotion/hash': 0.9.0
+      '@emotion/weak-memoize': 0.3.0
+      '@graphql-ts/extend': 1.0.0_k6z5qrhyvbvhgc7wb3dwunmika
+      '@graphql-ts/schema': 0.6.0_graphql@16.6.0
+      '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
+      '@hapi/iron': 6.0.0
+      '@keystone-ui/button': 7.0.2_ffkwgj6jojalltlwodaqdkq5ie
+      '@keystone-ui/core': 5.0.2_bkycudvrb3j3gvocoupj7qjewi
+      '@keystone-ui/fields': 7.1.2_ffkwgj6jojalltlwodaqdkq5ie
+      '@keystone-ui/icons': 6.0.2_bkycudvrb3j3gvocoupj7qjewi
+      '@keystone-ui/loading': 6.0.2_ffkwgj6jojalltlwodaqdkq5ie
+      '@keystone-ui/modals': 6.0.3_ffkwgj6jojalltlwodaqdkq5ie
+      '@keystone-ui/notice': 6.0.2_ffkwgj6jojalltlwodaqdkq5ie
+      '@keystone-ui/options': 6.0.2_bkycudvrb3j3gvocoupj7qjewi
+      '@keystone-ui/pill': 7.0.2_bkycudvrb3j3gvocoupj7qjewi
+      '@keystone-ui/popover': 6.0.2_bkycudvrb3j3gvocoupj7qjewi
+      '@keystone-ui/segmented-control': 7.0.2_bkycudvrb3j3gvocoupj7qjewi
+      '@keystone-ui/toast': 6.0.2_bkycudvrb3j3gvocoupj7qjewi
+      '@keystone-ui/tooltip': 6.0.2_bkycudvrb3j3gvocoupj7qjewi
+      '@nodelib/fs.walk': 1.2.8
+      '@preconstruct/next': 4.0.0
+      '@prisma/client': 4.3.1_prisma@4.3.1
+      '@prisma/internals': 4.3.1
+      '@prisma/migrate': 4.3.1_jbafaao3kt2mbtea77bvzgujka
+      '@sindresorhus/slugify': 1.1.2
+      '@types/apollo-upload-client': 17.0.2_biqbaboplfbrettd7655fr4n2y
+      '@types/bcryptjs': 2.4.2
+      '@types/cookie': 0.5.1
+      '@types/express': 4.17.14
+      '@types/fs-extra': 9.0.13
+      '@types/inflection': 1.13.0
+      '@types/pluralize': 0.0.29
+      '@types/prompts': 2.4.2
+      '@types/react': 18.0.26
+      '@types/supertest': 2.0.12
+      '@types/uid-safe': 2.1.2
+      '@types/uuid': 8.3.4
+      apollo-server-core: 3.11.1_graphql@16.6.0
+      apollo-server-errors: 3.3.1_graphql@16.6.0
+      apollo-server-express: 3.11.1_5ha345eiak62qiwwva5z4dp6gu
+      apollo-server-micro: 3.11.1_graphql@16.6.0+micro@9.4.1
+      apollo-server-types: 3.7.1_graphql@16.6.0
+      apollo-upload-client: 17.0.0_qyljuixjfow6vokwpa4ukudbla
+      bcryptjs: 2.4.3
+      bytes: 3.1.2
+      chalk: 4.1.2
+      ci-info: 3.7.0
+      clipboard-copy: 4.0.1
+      conf: 10.2.0
+      cookie: 0.5.0
+      cors: 2.8.5
+      cuid: 2.1.8
+      dataloader: 2.1.0
+      date-fns: 2.29.3
+      decimal.js: 10.4.3
+      dumb-passwords: 0.2.1
+      esbuild: 0.15.18
+      execa: 5.1.1
+      express: 4.18.2
+      fast-deep-equal: 3.1.3
+      filenamify: 4.3.0
+      form-data: 4.0.0
+      fs-extra: 10.1.0
+      graphql: 16.6.0
+      graphql-upload: 15.0.2_lnri6p3yhfowwvayiwekj3w2oq
+      image-size: 1.0.2
+      image-type: 4.1.0
+      inflection: 1.13.4
+      intersection-observer: 0.12.2
+      meow: 9.0.0
+      micro: 9.4.1
+      next: 13.0.6_672uxklweod7ene3nqtsh262ca
+      node-fetch: 2.6.7
+      p-limit: 2.3.0
+      pluralize: 8.0.0
+      prisma: 4.3.1
+      prompts: 2.4.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      resolve: 1.22.1
+      supertest: 6.3.3
+      ts-toolbelt: 9.6.0
+      uid-safe: 2.1.5
+      uuid: 9.0.0
+    transitivePeerDependencies:
+      - '@aws-sdk/abort-controller'
+      - '@aws-sdk/signature-v4-crt'
+      - '@babel/core'
+      - '@prisma/generator-helper'
+      - '@types/koa'
+      - aws-crt
+      - babel-plugin-macros
+      - encoding
+      - fibers
+      - graphql-ws
+      - node-sass
+      - pg-native
+      - sass
+      - subscriptions-transport-ws
+      - supports-color
+    dev: false
+
   /@keystone-6/document-renderer/1.1.2_react@18.2.0:
     resolution: {integrity: sha512-fxnQL6xYTK/2xSrZ0dzBTC1Qpa4VVeXmZ+7mMvaZOWquttgvDQzBRY57q9zScRa0dAALNWU1xzq14OL8Kc+eBw==}
     peerDependencies:
@@ -2208,7 +2319,7 @@ packages:
       '@dnd-kit/modifiers': 6.0.1_ighjjj6vulsdnb2lagbd2egmxy
       '@dnd-kit/sortable': 7.0.1_ighjjj6vulsdnb2lagbd2egmxy
       '@emotion/weak-memoize': 0.3.0
-      '@keystone-6/core': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-6/core_b4eyluiibtzggrslc7q5mbsxbu'
+      '@keystone-6/core': 4.0.1_b4eyluiibtzggrslc7q5mbsxbu
       '@keystone-6/document-renderer': 1.1.2_react@18.2.0
       '@keystone-ui/button': 7.0.2_ffkwgj6jojalltlwodaqdkq5ie
       '@keystone-ui/core': 5.0.2_bkycudvrb3j3gvocoupj7qjewi
@@ -2333,6 +2444,52 @@ packages:
       - react-dom
     dev: false
 
+  /@keystone-ui/notice/6.0.2_ffkwgj6jojalltlwodaqdkq5ie:
+    resolution: {integrity: sha512-SodZehvF0a5GmMx3LGXJW4i3QtNDTD9tnrOV+5EUb21f352z6kUVL+UxS9439ZnGvgyWETPYw/ZsGu19lD/2Ag==}
+    dependencies:
+      '@babel/runtime': 7.20.6
+      '@keystone-ui/button': 7.0.2_ffkwgj6jojalltlwodaqdkq5ie
+      '@keystone-ui/core': 5.0.2_bkycudvrb3j3gvocoupj7qjewi
+      '@keystone-ui/icons': 6.0.2_bkycudvrb3j3gvocoupj7qjewi
+      react: 18.2.0
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@types/react'
+      - react-dom
+    dev: false
+
+  /@keystone-ui/options/6.0.2_bkycudvrb3j3gvocoupj7qjewi:
+    resolution: {integrity: sha512-JH5+hI0JNDTF7bTdmDMzrGh9k5tFH89B9AtQlmakLb/rD1ZQ35ztPwNV8U/WH+pyZXC9M72POkEwHMI9paq1mA==}
+    peerDependencies:
+      react: ^18.1.0
+    dependencies:
+      '@babel/runtime': 7.20.6
+      '@keystone-ui/core': 5.0.2_bkycudvrb3j3gvocoupj7qjewi
+      '@keystone-ui/fields': 7.1.2_ffkwgj6jojalltlwodaqdkq5ie
+      '@keystone-ui/icons': 6.0.2_bkycudvrb3j3gvocoupj7qjewi
+      react: 18.2.0
+      react-select: 5.7.0_bkycudvrb3j3gvocoupj7qjewi
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@types/react'
+      - react-dom
+    dev: false
+
+  /@keystone-ui/pill/7.0.2_bkycudvrb3j3gvocoupj7qjewi:
+    resolution: {integrity: sha512-s4V588PvZuJr02ppTE01IgzRTnRCrC47wvwv7u2PLgmyyvP5HPMBOoTuwEIxdY0J8CWAWOOT8HCu+ME68G++HQ==}
+    peerDependencies:
+      react: ^18.1.0
+    dependencies:
+      '@babel/runtime': 7.20.6
+      '@keystone-ui/core': 5.0.2_bkycudvrb3j3gvocoupj7qjewi
+      '@keystone-ui/icons': 6.0.2_bkycudvrb3j3gvocoupj7qjewi
+      react: 18.2.0
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@types/react'
+      - react-dom
+    dev: false
+
   /@keystone-ui/popover/6.0.2_bkycudvrb3j3gvocoupj7qjewi:
     resolution: {integrity: sha512-E0WBEkoe+e0rjSAOBAFNKNHDVvIhx9YqEcwFLaCUUj6q93O7/gUq6wNrkrTfDAhz5O9tMgLkXE6jAHdvYFk/IQ==}
     peerDependencies:
@@ -2349,6 +2506,35 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - '@types/react'
+    dev: false
+
+  /@keystone-ui/segmented-control/7.0.2_bkycudvrb3j3gvocoupj7qjewi:
+    resolution: {integrity: sha512-XDeh3AHYX08YoFbKmPIgbI7eoR6LrBdXYqLDTbanMPWzRXl5YHvCODV0pS5/tyDyatqPGH3FjzK9mWOAnaPpkw==}
+    peerDependencies:
+      react: ^18.1.0
+    dependencies:
+      '@babel/runtime': 7.20.6
+      '@keystone-ui/core': 5.0.2_bkycudvrb3j3gvocoupj7qjewi
+      react: 18.2.0
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@types/react'
+      - react-dom
+    dev: false
+
+  /@keystone-ui/toast/6.0.2_bkycudvrb3j3gvocoupj7qjewi:
+    resolution: {integrity: sha512-Q/0UNO58SgnIwmDDsVVjDmPAuM+xWEvXJSx/46FPAKNgHbPZYNewhuW+AHn8iCcP5xScByAIcqql5FRXKBxidA==}
+    peerDependencies:
+      react: ^18.1.0
+    dependencies:
+      '@babel/runtime': 7.20.6
+      '@keystone-ui/core': 5.0.2_bkycudvrb3j3gvocoupj7qjewi
+      '@keystone-ui/icons': 6.0.2_bkycudvrb3j3gvocoupj7qjewi
+      react: 18.2.0
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@types/react'
+      - react-dom
     dev: false
 
   /@keystone-ui/tooltip/6.0.2_bkycudvrb3j3gvocoupj7qjewi:
@@ -8659,358 +8845,4 @@ packages:
 
   /zwitch/1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
-    dev: false
-
-  '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-6/core_b4eyluiibtzggrslc7q5mbsxbu':
-    resolution: {tarball: https://pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-6/core}
-    id: '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-6/core'
-    name: '@keystone-6/core'
-    version: 4.0.1
-    hasBin: true
-    dependencies:
-      '@apollo/client': 3.7.2_gdcq4dv6opitr3wbfwyjmanyra
-      '@aws-sdk/client-s3': 3.226.0
-      '@aws-sdk/lib-storage': 3.226.0_3sonlkuebi6gzxusmqd6vu6lyi
-      '@aws-sdk/s3-request-presigner': 3.226.0
-      '@babel/runtime': 7.20.6
-      '@emotion/hash': 0.9.0
-      '@emotion/weak-memoize': 0.3.0
-      '@graphql-ts/extend': 1.0.0_k6z5qrhyvbvhgc7wb3dwunmika
-      '@graphql-ts/schema': 0.6.0_graphql@16.6.0
-      '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
-      '@hapi/iron': 6.0.0
-      '@keystone-ui/button': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/button_ffkwgj6jojalltlwodaqdkq5ie'
-      '@keystone-ui/core': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/core_bkycudvrb3j3gvocoupj7qjewi'
-      '@keystone-ui/fields': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/fields_ffkwgj6jojalltlwodaqdkq5ie'
-      '@keystone-ui/icons': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/icons_bkycudvrb3j3gvocoupj7qjewi'
-      '@keystone-ui/loading': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/loading_ffkwgj6jojalltlwodaqdkq5ie'
-      '@keystone-ui/modals': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/modals_ffkwgj6jojalltlwodaqdkq5ie'
-      '@keystone-ui/notice': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/notice_ffkwgj6jojalltlwodaqdkq5ie'
-      '@keystone-ui/options': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/options_bkycudvrb3j3gvocoupj7qjewi'
-      '@keystone-ui/pill': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/pill_bkycudvrb3j3gvocoupj7qjewi'
-      '@keystone-ui/popover': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/popover_bkycudvrb3j3gvocoupj7qjewi'
-      '@keystone-ui/segmented-control': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/segmented-control_bkycudvrb3j3gvocoupj7qjewi'
-      '@keystone-ui/toast': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/toast_bkycudvrb3j3gvocoupj7qjewi'
-      '@keystone-ui/tooltip': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/tooltip_bkycudvrb3j3gvocoupj7qjewi'
-      '@nodelib/fs.walk': 1.2.8
-      '@preconstruct/next': 4.0.0
-      '@prisma/client': 4.3.1_prisma@4.3.1
-      '@prisma/internals': 4.3.1
-      '@prisma/migrate': 4.3.1_jbafaao3kt2mbtea77bvzgujka
-      '@sindresorhus/slugify': 1.1.2
-      '@types/apollo-upload-client': 17.0.2_biqbaboplfbrettd7655fr4n2y
-      '@types/bcryptjs': 2.4.2
-      '@types/cookie': 0.5.1
-      '@types/express': 4.17.14
-      '@types/fs-extra': 9.0.13
-      '@types/inflection': 1.13.0
-      '@types/pluralize': 0.0.29
-      '@types/prompts': 2.4.2
-      '@types/react': 18.0.26
-      '@types/supertest': 2.0.12
-      '@types/uid-safe': 2.1.2
-      '@types/uuid': 8.3.4
-      apollo-server-core: 3.11.1_graphql@16.6.0
-      apollo-server-errors: 3.3.1_graphql@16.6.0
-      apollo-server-express: 3.11.1_5ha345eiak62qiwwva5z4dp6gu
-      apollo-server-micro: 3.11.1_graphql@16.6.0+micro@9.4.1
-      apollo-server-types: 3.7.1_graphql@16.6.0
-      apollo-upload-client: 17.0.0_qyljuixjfow6vokwpa4ukudbla
-      bcryptjs: 2.4.3
-      bytes: 3.1.2
-      chalk: 4.1.2
-      ci-info: 3.7.0
-      clipboard-copy: 4.0.1
-      conf: 10.2.0
-      cookie: 0.5.0
-      cors: 2.8.5
-      cuid: 2.1.8
-      dataloader: 2.1.0
-      date-fns: 2.29.3
-      decimal.js: 10.4.3
-      dumb-passwords: 0.2.1
-      esbuild: 0.15.18
-      execa: 5.1.1
-      express: 4.18.2
-      fast-deep-equal: 3.1.3
-      filenamify: 4.3.0
-      form-data: 4.0.0
-      fs-extra: 10.1.0
-      graphql: 16.6.0
-      graphql-upload: 15.0.2_lnri6p3yhfowwvayiwekj3w2oq
-      image-size: 1.0.2
-      image-type: 4.1.0
-      inflection: 1.13.4
-      intersection-observer: 0.12.2
-      meow: 9.0.0
-      micro: 9.4.1
-      next: 13.0.6_672uxklweod7ene3nqtsh262ca
-      node-fetch: 2.6.7
-      p-limit: 2.3.0
-      pluralize: 8.0.0
-      prisma: 4.3.1
-      prompts: 2.4.2
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      resolve: 1.22.1
-      supertest: 6.3.3
-      ts-toolbelt: 9.6.0
-      uid-safe: 2.1.5
-      uuid: 9.0.0
-    transitivePeerDependencies:
-      - '@aws-sdk/abort-controller'
-      - '@aws-sdk/signature-v4-crt'
-      - '@babel/core'
-      - '@prisma/generator-helper'
-      - '@types/koa'
-      - aws-crt
-      - babel-plugin-macros
-      - encoding
-      - fibers
-      - graphql-ws
-      - node-sass
-      - pg-native
-      - sass
-      - subscriptions-transport-ws
-      - supports-color
-    dev: false
-
-  '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/button_ffkwgj6jojalltlwodaqdkq5ie':
-    resolution: {tarball: https://pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/button}
-    id: '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/button'
-    name: '@keystone-ui/button'
-    version: 7.0.2
-    dependencies:
-      '@babel/runtime': 7.20.6
-      '@keystone-ui/core': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/core_bkycudvrb3j3gvocoupj7qjewi'
-      '@keystone-ui/icons': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/icons_bkycudvrb3j3gvocoupj7qjewi'
-      '@keystone-ui/loading': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/loading_ffkwgj6jojalltlwodaqdkq5ie'
-      react: 18.2.0
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@types/react'
-      - react-dom
-    dev: false
-
-  '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/core_bkycudvrb3j3gvocoupj7qjewi':
-    resolution: {tarball: https://pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/core}
-    id: '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/core'
-    name: '@keystone-ui/core'
-    version: 5.0.2
-    peerDependencies:
-      react: ^18.2.0
-      react-dom: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.20.6
-      '@emotion/react': 11.10.5_xl5my4wapvq2ctl7qwehtbgorq
-      '@types/facepaint': 1.2.2
-      facepaint: 1.2.1
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@types/react'
-    dev: false
-
-  '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/fields_ffkwgj6jojalltlwodaqdkq5ie':
-    resolution: {tarball: https://pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/fields}
-    id: '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/fields'
-    name: '@keystone-ui/fields'
-    version: 7.1.2
-    dependencies:
-      '@babel/runtime': 7.20.6
-      '@keystone-ui/core': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/core_bkycudvrb3j3gvocoupj7qjewi'
-      '@keystone-ui/icons': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/icons_bkycudvrb3j3gvocoupj7qjewi'
-      '@keystone-ui/popover': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/popover_bkycudvrb3j3gvocoupj7qjewi'
-      date-fns: 2.29.3
-      react: 18.2.0
-      react-day-picker: 8.3.7_r6j3756ioqf5pjc2u22wj25rla
-      react-focus-lock: 2.9.2_kzbn2opkn2327fwg5yzwzya5o4
-      react-select: 5.7.0_bkycudvrb3j3gvocoupj7qjewi
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@types/react'
-      - react-dom
-    dev: false
-
-  '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/icons_bkycudvrb3j3gvocoupj7qjewi':
-    resolution: {tarball: https://pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/icons}
-    id: '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/icons'
-    name: '@keystone-ui/icons'
-    version: 6.0.2
-    peerDependencies:
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.20.6
-      '@keystone-ui/core': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/core_bkycudvrb3j3gvocoupj7qjewi'
-      react: 18.2.0
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@types/react'
-      - react-dom
-    dev: false
-
-  '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/loading_ffkwgj6jojalltlwodaqdkq5ie':
-    resolution: {tarball: https://pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/loading}
-    id: '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/loading'
-    name: '@keystone-ui/loading'
-    version: 6.0.2
-    dependencies:
-      '@babel/runtime': 7.20.6
-      '@keystone-ui/core': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/core_bkycudvrb3j3gvocoupj7qjewi'
-      react: 18.2.0
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@types/react'
-      - react-dom
-    dev: false
-
-  '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/modals_ffkwgj6jojalltlwodaqdkq5ie':
-    resolution: {tarball: https://pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/modals}
-    id: '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/modals'
-    name: '@keystone-ui/modals'
-    version: 6.0.3
-    dependencies:
-      '@babel/runtime': 7.20.6
-      '@keystone-ui/button': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/button_ffkwgj6jojalltlwodaqdkq5ie'
-      '@keystone-ui/core': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/core_bkycudvrb3j3gvocoupj7qjewi'
-      react: 18.2.0
-      react-focus-lock: 2.9.2_kzbn2opkn2327fwg5yzwzya5o4
-      react-remove-scroll: 2.5.5_kzbn2opkn2327fwg5yzwzya5o4
-      react-transition-group: 4.4.5_biqbaboplfbrettd7655fr4n2y
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@types/react'
-      - react-dom
-    dev: false
-
-  '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/notice_ffkwgj6jojalltlwodaqdkq5ie':
-    resolution: {tarball: https://pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/notice}
-    id: '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/notice'
-    name: '@keystone-ui/notice'
-    version: 6.0.2
-    dependencies:
-      '@babel/runtime': 7.20.6
-      '@keystone-ui/button': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/button_ffkwgj6jojalltlwodaqdkq5ie'
-      '@keystone-ui/core': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/core_bkycudvrb3j3gvocoupj7qjewi'
-      '@keystone-ui/icons': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/icons_bkycudvrb3j3gvocoupj7qjewi'
-      react: 18.2.0
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@types/react'
-      - react-dom
-    dev: false
-
-  '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/options_bkycudvrb3j3gvocoupj7qjewi':
-    resolution: {tarball: https://pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/options}
-    id: '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/options'
-    name: '@keystone-ui/options'
-    version: 6.0.2
-    peerDependencies:
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.20.6
-      '@keystone-ui/core': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/core_bkycudvrb3j3gvocoupj7qjewi'
-      '@keystone-ui/fields': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/fields_ffkwgj6jojalltlwodaqdkq5ie'
-      '@keystone-ui/icons': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/icons_bkycudvrb3j3gvocoupj7qjewi'
-      react: 18.2.0
-      react-select: 5.7.0_bkycudvrb3j3gvocoupj7qjewi
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@types/react'
-      - react-dom
-    dev: false
-
-  '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/pill_bkycudvrb3j3gvocoupj7qjewi':
-    resolution: {tarball: https://pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/pill}
-    id: '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/pill'
-    name: '@keystone-ui/pill'
-    version: 7.0.2
-    peerDependencies:
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.20.6
-      '@keystone-ui/core': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/core_bkycudvrb3j3gvocoupj7qjewi'
-      '@keystone-ui/icons': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/icons_bkycudvrb3j3gvocoupj7qjewi'
-      react: 18.2.0
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@types/react'
-      - react-dom
-    dev: false
-
-  '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/popover_bkycudvrb3j3gvocoupj7qjewi':
-    resolution: {tarball: https://pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/popover}
-    id: '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/popover'
-    name: '@keystone-ui/popover'
-    version: 6.0.2
-    peerDependencies:
-      react: ^18.2.0
-      react-dom: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.20.6
-      '@keystone-ui/core': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/core_bkycudvrb3j3gvocoupj7qjewi'
-      '@popperjs/core': 2.11.6
-      focus-trap: 7.2.0
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      react-popper: 2.3.0_r6q5zrenym2zg7je7hgi674bti
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@types/react'
-    dev: false
-
-  '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/segmented-control_bkycudvrb3j3gvocoupj7qjewi':
-    resolution: {tarball: https://pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/segmented-control}
-    id: '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/segmented-control'
-    name: '@keystone-ui/segmented-control'
-    version: 7.0.2
-    peerDependencies:
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.20.6
-      '@keystone-ui/core': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/core_bkycudvrb3j3gvocoupj7qjewi'
-      react: 18.2.0
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@types/react'
-      - react-dom
-    dev: false
-
-  '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/toast_bkycudvrb3j3gvocoupj7qjewi':
-    resolution: {tarball: https://pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/toast}
-    id: '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/toast'
-    name: '@keystone-ui/toast'
-    version: 6.0.2
-    peerDependencies:
-      react: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.20.6
-      '@keystone-ui/core': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/core_bkycudvrb3j3gvocoupj7qjewi'
-      '@keystone-ui/icons': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/icons_bkycudvrb3j3gvocoupj7qjewi'
-      react: 18.2.0
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@types/react'
-      - react-dom
-    dev: false
-
-  '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/tooltip_bkycudvrb3j3gvocoupj7qjewi':
-    resolution: {tarball: https://pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/tooltip}
-    id: '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/tooltip'
-    name: '@keystone-ui/tooltip'
-    version: 6.0.2
-    peerDependencies:
-      react: ^18.2.0
-      react-dom: ^18.2.0
-    dependencies:
-      '@babel/runtime': 7.20.6
-      '@keystone-ui/core': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/core_bkycudvrb3j3gvocoupj7qjewi'
-      '@keystone-ui/popover': '@pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-ui/popover_bkycudvrb3j3gvocoupj7qjewi'
-      apply-ref: 1.0.0
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@types/react'
     dev: false

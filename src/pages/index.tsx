@@ -3,11 +3,13 @@ import type {
 	NextPage,
 	GetServerSideProps,
 	InferGetServerSidePropsType,
+	NextApiRequest,
+	NextApiResponse,
 } from 'next'
 import Head from 'next/head'
 import { gql } from 'graphql-request'
 import { client } from '../util/request'
-import { keystoneContext } from '../keystone/context'
+import { getSessionContext } from '../keystone/context'
 import { Header } from '../components/Header'
 
 const Home: NextPage = ({
@@ -89,7 +91,10 @@ const Home: NextPage = ({
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
 	// keystone session cookie is automatically unwrapped
-	const context = await keystoneContext.withRequest(req, res)
+	const context = await getSessionContext({ req, res } as {
+		req: NextApiRequest
+		res: NextApiResponse
+	})
 	const users = await context.query.User.findMany({
 		query: 'id name email',
 	})

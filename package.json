@@ -13,7 +13,7 @@
 		"start:next": "next start"
 	},
 	"dependencies": {
-		"@keystone-6/core": "https://pkg.csb.dev/keystonejs/keystone/commit/241712c7/@keystone-6/core",
+		"@keystone-6/core": "^4.0.1",
 		"@keystone-6/fields-document": "^6.0.0",
 		"@preconstruct/next": "^4.0.0",
 		"@prisma/client": "4.3.1",

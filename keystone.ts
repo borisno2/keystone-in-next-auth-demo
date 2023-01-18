@@ -1,24 +1,17 @@
+import dotenv from 'dotenv-flow'
 import { Context } from '.keystone/types'
 import { lists } from './src/keystone/schema'
-import { getSession as getNextAuthSession } from 'next-auth/react'
 import { seedDemoData } from './src/keystone/seed'
 
 import * as Path from 'path'
 
 import { config } from '@keystone-6/core'
-const dbFilePath = `${process.cwd()}/keystone.db`
-
-const getSession = async ({ context }: any) => {
-	const { req, res } = context
-	if (!req || !res) return null
-	const session = await getNextAuthSession({ req })
-	return session
-}
+dotenv.config()
 
 export default config({
 	db: {
-		provider: 'sqlite',
-		url: `file:${dbFilePath}`,
+		provider: 'postgresql',
+		url: process.env.DATABASE_URL!,
 		onConnect: async (context: Context) => {
 			await seedDemoData(context)
 		},
@@ -38,5 +31,4 @@ export default config({
 		port: 4000,
 	},
 	lists,
-	getSession,
 })

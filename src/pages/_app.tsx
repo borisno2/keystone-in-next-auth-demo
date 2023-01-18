@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import type { AppProps } from 'next/app'
-import { SessionProvider } from 'next-auth/react'
+import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
+import { SessionContextProvider } from '@supabase/auth-helpers-react'
 
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
+	const [supabaseClient] = useState(() => createBrowserSupabaseClient())
 	return (
-		<SessionProvider session={session}>
+		<SessionContextProvider
+			supabaseClient={supabaseClient}
+			initialSession={pageProps.initialSession}
+		>
 			<Component {...pageProps} />
-		</SessionProvider>
+		</SessionContextProvider>
 	)
 }
 

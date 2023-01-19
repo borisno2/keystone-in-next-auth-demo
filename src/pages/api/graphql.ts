@@ -23,5 +23,6 @@ export default createYoga<{
 }>({
 	graphqlEndpoint: '/api/graphql',
 	schema: keystoneContext.graphql.schema,
-	context: async ({ req, res }) => await getKeystoneSessionContext(req, res),
+	context: async ({ req, res }) =>
+		await getKeystoneSessionContext({ req, res }),
 })

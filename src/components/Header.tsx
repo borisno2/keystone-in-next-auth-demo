@@ -7,6 +7,8 @@ export function Header() {
 	const [user, setUser] = useState<{ name: string } | null>(null)
 	const emailRef = useRef<HTMLInputElement | null>(null)
 	const passwordRef = useRef<HTMLInputElement | null>(null)
+	const regEmailRef = useRef<HTMLInputElement | null>(null)
+	const regPasswordRef = useRef<HTMLInputElement | null>(null)
 
 	useEffect(() => {
 		supabaseClient.auth
@@ -40,9 +42,9 @@ export function Header() {
 		}
 	}
 	const register = async () => {
-		if (emailRef.current && passwordRef.current) {
-			const email = emailRef.current.value
-			const password = passwordRef.current.value
+		if (regEmailRef.current && regPasswordRef.current) {
+			const email = regEmailRef.current.value
+			const password = regPasswordRef.current.value
 
 			const { data, error } = await supabaseClient.auth.signUp({
 				email,
@@ -107,7 +109,7 @@ export function Header() {
 					<input
 						name="email"
 						type="email"
-						ref={emailRef}
+						ref={regEmailRef}
 						placeholder="bruce@email.com"
 					/>
 				</label>
@@ -116,7 +118,7 @@ export function Header() {
 					<input
 						name="password"
 						type="password"
-						ref={passwordRef}
+						ref={regPasswordRef}
 						placeholder="passw0rd"
 					/>
 				</label>

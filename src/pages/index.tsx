@@ -91,10 +91,7 @@ const Home: NextPage = ({
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
 	// keystone session cookie is automatically unwrapped
-	const context = await getKeystoneSessionContext(
-		req as NextApiRequest,
-		res as NextApiResponse
-	)
+	const context = await getKeystoneSessionContext({ req, res })
 	const users = await context.query.User.findMany({
 		query: 'id name email',
 	})

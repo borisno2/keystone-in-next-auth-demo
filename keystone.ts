@@ -1,3 +1,4 @@
+import { NextApiRequest, NextApiResponse } from 'next/types'
 import dotenv from 'dotenv-flow'
 import { Context } from '.keystone/types'
 import { lists } from './src/keystone/schema'
@@ -6,7 +7,59 @@ import { seedDemoData } from './src/keystone/seed'
 import * as Path from 'path'
 
 import { config } from '@keystone-6/core'
+import { SessionStrategy } from '@keystone-6/core/types'
+import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs'
 dotenv.config()
+
+const session: SessionStrategy<any> = {
+	get: async ({ context }) => {
+		if (!context.req || !context.res) {
+			return null
+		}
+		const supabaseServerClient = createServerSupabaseClient({
+			req: context.req as NextApiRequest,
+			res: context.res as NextApiResponse,
+		})
+		const {
+			data: { user },
+		} = await supabaseServerClient.auth.getUser()
+
+		if (!user || !user.id) {
+			return null
+		}
+		const dbUser = await context.sudo().db.User.findOne({
+			where: {
+				subjectId: user?.id,
+			},
+		})
+		if (!dbUser) {
+			return null
+		}
+		const session = {
+			id: dbUser.id,
+			email: user?.email,
+			data: {
+				...dbUser,
+			},
+		}
+
+		return session
+	},
+	start: async () => {
+		//start not used
+		return null
+	},
+	end: async ({ context }) => {
+		if (!context.req || !context.res) {
+			return null
+		}
+		const supabaseServerClient = createServerSupabaseClient({
+			req: context.req as NextApiRequest,
+			res: context.res as NextApiResponse,
+		})
+		await supabaseServerClient.auth.signOut()
+	},
+}
 
 export default config({
 	db: {
@@ -31,4 +84,5 @@ export default config({
 		port: 4000,
 	},
 	lists,
+	session,
 })

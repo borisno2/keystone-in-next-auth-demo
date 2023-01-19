@@ -110,7 +110,7 @@ export function Header() {
 						name="email"
 						type="email"
 						ref={regEmailRef}
-						placeholder="bruce@email.com"
+						placeholder="newuser@email.com"
 					/>
 				</label>
 				<label>
@@ -119,7 +119,7 @@ export function Header() {
 						name="password"
 						type="password"
 						ref={regPasswordRef}
-						placeholder="passw0rd"
+						placeholder="password"
 					/>
 				</label>
 				<button onClick={register}>register</button>

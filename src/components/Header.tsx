@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
+import Link from 'next/link'
 
 export function Header() {
 	const supabaseClient = createBrowserSupabaseClient()
@@ -136,6 +137,7 @@ export function Header() {
 			}}
 		>
 			<div>Hello, {user.name}!</div>
+			<Link href="/admin">Keystone Admin</Link>
 			<button onClick={logout}>logout</button>
 		</div>
 	)

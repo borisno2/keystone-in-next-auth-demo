@@ -5,7 +5,7 @@
 		"build:keystone": "keystone build",
 		"build:next": "next build",
 		"dev": "concurrently \"pnpm dev:keystone\" \"pnpm dev:next\"",
-		"dev:keystone": "keystone dev",
+		"dev:keystone": "next dev .keystone/admin --port 4000",
 		"dev:next": "next dev",
 		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
 		"postinstall": "keystone postinstall",

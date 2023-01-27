@@ -1,4 +1,4 @@
-# Keystone in NextJS with Next Auth
+# Keystone in NextJS with Supabase and Supabase Auth
 
 A POC showing ^
 

@@ -78,53 +78,65 @@ export function Header() {
 
 	if (!user) {
 		return (
-			<div
-				style={{
-					height: '2rem',
-					display: 'flex',
-					gap: '1em',
-					alignItems: 'flex-end',
-				}}
-			>
-				<label>
-					email:{' '}
-					<input
-						name="email"
-						type="email"
-						ref={emailRef}
-						placeholder="bruce@email.com"
-					/>
-				</label>
-				<label>
-					password:{' '}
-					<input
-						name="password"
-						type="password"
-						ref={passwordRef}
-						placeholder="passw0rd"
-					/>
-				</label>
-				<button onClick={login}>login</button>
-				<label>
-					email:{' '}
-					<input
-						name="email"
-						type="email"
-						ref={regEmailRef}
-						placeholder="newuser@email.com"
-					/>
-				</label>
-				<label>
-					password:{' '}
-					<input
-						name="password"
-						type="password"
-						ref={regPasswordRef}
-						placeholder="password"
-					/>
-				</label>
-				<button onClick={register}>register</button>
-			</div>
+			<>
+				<div
+					style={{
+						height: '2rem',
+						display: 'flex',
+						gap: '1em',
+						alignItems: 'flex-end',
+					}}
+				>
+					<label>
+						email:{' '}
+						<input
+							name="email"
+							type="email"
+							ref={emailRef}
+							placeholder="bruce@email.com"
+						/>
+					</label>
+					<label>
+						password:{' '}
+						<input
+							name="password"
+							type="password"
+							ref={passwordRef}
+							placeholder="passw0rd"
+						/>
+					</label>
+					<button onClick={login}>login</button>
+				</div>
+				<div
+					style={{
+						height: '2rem',
+						display: 'flex',
+						gap: '1em',
+						alignItems: 'flex-end',
+						paddingTop: '4rem',
+					}}
+				>
+					<label>
+						email:{' '}
+						<input
+							name="email"
+							type="email"
+							ref={regEmailRef}
+							placeholder="newuser@email.com"
+						/>
+					</label>
+					<label>
+						password:{' '}
+						<input
+							name="password"
+							type="password"
+							ref={regPasswordRef}
+							placeholder="password"
+						/>
+					</label>
+					<button onClick={register}>register</button>
+				</div>
+			</>
 		)
 	}
 

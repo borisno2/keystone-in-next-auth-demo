@@ -3,8 +3,6 @@ import type {
 	NextPage,
 	GetServerSideProps,
 	InferGetServerSidePropsType,
-	NextApiRequest,
-	NextApiResponse,
 } from 'next'
 import Head from 'next/head'
 import { gql } from 'graphql-request'

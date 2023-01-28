@@ -73,13 +73,14 @@ const Home: NextPage = ({
 					</ul>
 					<p>
 						<em>
-							Note: Since you are not starting the keystone server, the Admin UI
-							will not be available. You can host Keystone as a separate server
-							if you need Admin UI.
+							The Admin UI is proxied to the Next.js server and can be accessed
+							at{' '}
+							<a href="/admin"> /Admin </a>
+							This route is protected by Next.js middleware.
 						</em>
 					</p>
 					<p>
-						<a href="https://github.com/keystonejs/keystone/examples/keystone-in-next">
+						<a href="https://github.com/borisno2/keystone-in-next-auth-demo/tree/in-supabase">
 							Check out the example in the repo more info.
 						</a>
 					</p>

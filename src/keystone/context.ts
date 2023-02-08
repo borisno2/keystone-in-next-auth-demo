@@ -1,5 +1,4 @@
 import { getContext } from '@keystone-6/core/context'
-import { headers, cookies } from 'next/headers'
 import config from '../../keystone'
 import { Context } from '.keystone/types'
 import * as PrismaModule from '.prisma/client'
@@ -28,6 +27,7 @@ export async function getKeystoneSessionContext(props?: {
 			rawSession.session?.user.app_metadata?.keystone
 		)
 	} else {
+		const { headers, cookies } = require('next/headers')
 		const { data: rawSession } = await createServerComponentSupabaseClient({
 			headers,
 			cookies,

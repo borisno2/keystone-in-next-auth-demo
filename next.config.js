@@ -5,19 +5,12 @@ const Path = require('path')
 
 module.exports = withPreconstruct({
 	webpack(config) {
-		config.resolve.alias = {
-			...config.resolve.alias,
-			react: Path.dirname(require.resolve('react/package.json')),
-			'react-dom': Path.dirname(require.resolve('react-dom/package.json')),
-			'@keystone-6/core': Path.dirname(
-				require.resolve('@keystone-6/core/package.json')
-			),
-		}
 		config.externals = [...config.externals, '.prisma/client']
 		return config
 	},
 	experimental: {
 		appDir: true,
+		serverComponentsExternalPackages: ['graphql'],
 	},
 	async rewrites() {
 		return {

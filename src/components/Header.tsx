@@ -1,35 +1,23 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
+'use client'
+import { useRef } from 'react'
+import { useRouter } from 'next/navigation'
+import { useSupabase } from './SupabaseProvider'
 import Link from 'next/link'
 
-export function Header() {
-	const supabaseClient = createBrowserSupabaseClient()
-	const [isLoading, setLoading] = useState<boolean>(true)
-	const [user, setUser] = useState<{ name: string } | null>(null)
+export function Header({ user }: { user: { name: string } | null }) {
+	const router = useRouter()
+	const { supabase } = useSupabase()
 	const emailRef = useRef<HTMLInputElement | null>(null)
 	const passwordRef = useRef<HTMLInputElement | null>(null)
 	const regEmailRef = useRef<HTMLInputElement | null>(null)
 	const regPasswordRef = useRef<HTMLInputElement | null>(null)
-
-	useEffect(() => {
-		supabaseClient.auth
-			.getSession()
-			.then((data) => {
-				if (data.data.session?.user.email) {
-					setUser({ name: data.data.session?.user.email })
-				}
-			})
-			.finally(() => {
-				setLoading(false)
-			})
-	}, [])
 
 	const login = async () => {
 		if (emailRef.current && passwordRef.current) {
 			const email = emailRef.current.value
 			const password = passwordRef.current.value
 
-			const { data, error } = await supabaseClient.auth.signInWithPassword({
+			const { data, error } = await supabase.auth.signInWithPassword({
 				email,
 				password,
 			})
@@ -37,8 +25,7 @@ export function Header() {
 				console.log('error', error)
 			}
 			if (data?.user?.email) {
-				setUser({ name: data?.user.email })
-				window.location.reload()
+				router.refresh()
 			}
 		}
 	}
@@ -47,7 +34,7 @@ export function Header() {
 			const email = regEmailRef.current.value
 			const password = regPasswordRef.current.value
 
-			const { data, error } = await supabaseClient.auth.signUp({
+			const { data, error } = await supabase.auth.signUp({
 				email,
 				password,
 			})
@@ -55,25 +42,19 @@ export function Header() {
 				console.log('error', error)
 			}
 			if (data?.user?.email) {
-				setUser({ name: data?.user.email })
-				window.location.reload()
+				router.refresh()
 			}
 		}
 	}
 
 	const logout = async () => {
-		const { error } = await supabaseClient.auth.signOut()
+		console.log('logout')
+		const { error } = await supabase.auth.signOut()
 		if (!error) {
-			setUser(null)
-			window.location.reload()
+			router.refresh()
 		} else {
 			console.log('error', error)
 		}
-	}
-
-	if (isLoading) {
-		// empty div to prevent layout jump
-		return <div style={{ height: '2rem' }} />
 	}
 
 	if (!user) {

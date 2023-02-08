@@ -13,7 +13,7 @@ export async function middleware(req: NextRequest) {
 	} = await supabase.auth.getSession()
 
 	// Check auth condition
-	if (session?.user.email) {
+	if (session?.user.app_metadata?.keystone?.role === 'admin') {
 		// Authentication successful, forward request to protected route.
 		return res
 	}

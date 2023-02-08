@@ -9,6 +9,7 @@ import * as Path from 'path'
 import { config } from '@keystone-6/core'
 import { SessionStrategy } from '@keystone-6/core/types'
 import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs'
+import { createClient } from '@supabase/supabase-js'
 dotenv.config()
 
 const session: SessionStrategy<any> = {
@@ -35,11 +36,22 @@ const session: SessionStrategy<any> = {
 		if (!dbUser) {
 			return null
 		}
+
+		const supabaseSudoClient = createClient(
+			process.env.NEXT_PUBLIC_SUPABASE_URL!,
+			process.env.SUPABASE_SERVICE_KEY!
+		)
+
+		const { data: updatedUser, error } =
+			await supabaseSudoClient.auth.admin.updateUserById(user.id, {
+				app_metadata: { keystone: dbUser },
+			})
+
 		const session = {
 			id: dbUser.id,
 			email: user?.email,
 			data: {
-				...dbUser,
+				...updatedUser,
 			},
 		}
 

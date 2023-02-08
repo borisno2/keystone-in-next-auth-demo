@@ -16,6 +16,9 @@ module.exports = withPreconstruct({
 		config.externals = [...config.externals, '.prisma/client']
 		return config
 	},
+	experimental: {
+		appDir: true,
+	},
 	async rewrites() {
 		return {
 			beforeFiles: [

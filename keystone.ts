@@ -12,67 +12,6 @@ import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { createClient } from '@supabase/supabase-js'
 dotenv.config()
 
-const session: SessionStrategy<any> = {
-	get: async ({ context }) => {
-		if (!context.req || !context.res) {
-			return null
-		}
-		const supabaseServerClient = createServerSupabaseClient({
-			req: context.req as NextApiRequest,
-			res: context.res as NextApiResponse,
-		})
-		const {
-			data: { user },
-		} = await supabaseServerClient.auth.getUser()
-
-		if (!user || !user.id) {
-			return null
-		}
-		const dbUser = await context.sudo().db.User.findOne({
-			where: {
-				subjectId: user?.id,
-			},
-		})
-		if (!dbUser) {
-			return null
-		}
-
-		const supabaseSudoClient = createClient(
-			process.env.NEXT_PUBLIC_SUPABASE_URL!,
-			process.env.SUPABASE_SERVICE_KEY!
-		)
-
-		const { data: updatedUser, error } =
-			await supabaseSudoClient.auth.admin.updateUserById(user.id, {
-				app_metadata: { keystone: dbUser },
-			})
-
-		const session = {
-			id: dbUser.id,
-			email: user?.email,
-			data: {
-				...updatedUser,
-			},
-		}
-
-		return session
-	},
-	start: async () => {
-		//start not used
-		return null
-	},
-	end: async ({ context }) => {
-		if (!context.req || !context.res) {
-			return null
-		}
-		const supabaseServerClient = createServerSupabaseClient({
-			req: context.req as NextApiRequest,
-			res: context.res as NextApiResponse,
-		})
-		await supabaseServerClient.auth.signOut()
-	},
-}
-
 export default config({
 	db: {
 		provider: 'postgresql',
@@ -96,5 +35,4 @@ export default config({
 		port: 4000,
 	},
 	lists,
-	session,
 })

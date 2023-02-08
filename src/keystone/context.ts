@@ -1,8 +1,13 @@
 import { getContext } from '@keystone-6/core/context'
+import { headers, cookies } from 'next/headers'
 import config from '../../keystone'
 import { Context } from '.keystone/types'
 import * as PrismaModule from '.prisma/client'
-import { IncomingMessage, ServerResponse } from 'http'
+import {
+	createServerComponentSupabaseClient,
+	createServerSupabaseClient,
+} from '@supabase/auth-helpers-nextjs'
+import { NextApiRequest, NextApiResponse } from 'next'
 
 // Making sure multiple prisma clients are not created during hot reloading
 export const keystoneContext: Context =
@@ -11,10 +16,24 @@ export const keystoneContext: Context =
 if (process.env.NODE_ENV !== 'production')
 	(globalThis as any).keystoneContext = keystoneContext
 
-export async function getKeystoneSessionContext(props: {
-	req: IncomingMessage & { cookies: Partial<{ [key: string]: string }> }
-	res: ServerResponse<IncomingMessage>
+export async function getKeystoneSessionContext(props?: {
+	req: NextApiRequest
+	res: NextApiResponse
 }) {
-	const { req, res } = props
-	return keystoneContext.withRequest(req, res)
+	if (props) {
+		const { data: rawSession } = await createServerSupabaseClient(
+			props
+		).auth.getSession()
+		return keystoneContext.withSession(
+			rawSession.session?.user.app_metadata?.keystone
+		)
+	} else {
+		const { data: rawSession } = await createServerComponentSupabaseClient({
+			headers,
+			cookies,
+		}).auth.getSession()
+		return keystoneContext.withSession(
+			rawSession.session?.user.app_metadata?.keystone
+		)
+	}
 }

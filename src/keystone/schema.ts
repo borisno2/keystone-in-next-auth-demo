@@ -4,7 +4,7 @@ import { text, password, timestamp } from '@keystone-6/core/fields'
 import type { Lists } from '.keystone/types'
 
 const permissions = {
-	authenticatedUser: ({ session }: any) => !!session?.data,
+	authenticatedUser: ({ session }: any) => !!session?.id,
 	public: () => true,
 	readOnly: {
 		operation: {

@@ -1,20 +1,17 @@
 import dotenv from 'dotenv-flow'
-import { Context } from '.keystone/types'
+import { TypeInfo } from '.keystone/types'
 import { lists } from './src/keystone/schema'
-import { seedDemoData } from './src/keystone/seed'
 
 import * as Path from 'path'
 
 import { config } from '@keystone-6/core'
 dotenv.config()
 
-export default config({
+export default config<TypeInfo>({
 	db: {
 		provider: 'postgresql',
 		url: process.env.DATABASE_URL!,
-		onConnect: async (context: Context) => {
-			await seedDemoData(context)
-		},
+		prismaClientPath: 'node_modules/.prisma/client',
 	},
 	ui: {
 		getAdditionalFiles: [

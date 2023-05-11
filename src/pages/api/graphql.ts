@@ -19,6 +19,7 @@ export default createYoga<{
 	req: NextApiRequest
 	res: NextApiResponse
 }>({
+	graphiql: process.env.NODE_ENV !== 'production',
 	graphqlEndpoint: '/api/graphql',
 	schema: keystoneContext.graphql.schema,
 	context: ({ req, res }) => getSessionContext({ req, res }),
